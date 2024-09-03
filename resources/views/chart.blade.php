@@ -139,7 +139,7 @@
 </head>
 
 <body>
-    <p align="center"><a href="{{ url('/admin2') }}"><button class="btn-Success btn mt-2">Chart kedua</button></a></p>
+    <p align="center"><a href="{{ url('/admin2') }}"><button class="btn-success btn mt-2">Chart kedua</button></a></p>
     <div class="container mt-5">
         <form action="{{ url('logout') }}" method="post">
             @csrf

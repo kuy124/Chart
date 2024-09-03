@@ -103,7 +103,7 @@
 </head>
 
 <body>
-    <p align="center"><a href="{{ url('/2') }}"><button class="btn-Success btn mt-2">Chart kedua</button></a></p>
+    <p align="center"><a href="{{ url('/2') }}"><button class="btn-success btn mt-2">Chart kedua</button></a></p>
     <div class="container mt-5">
         <a href="{{ url('login') }}" class="btn btn-warning mb-3">Masuk</a> 
         <div id="curve_chart" style="width: 900px; height: 500px"></div>

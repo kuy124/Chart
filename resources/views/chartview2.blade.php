@@ -100,7 +100,7 @@
 </head>
 
 <body>
-    <p align="center"><a href="{{ url('/') }}"><button class="btn-Success btn mt-2">Chart pertama</button></a></p>
+    <p align="center"><a href="{{ url('/') }}"><button class="btn-success btn mt-2">Chart pertama</button></a></p>
     <div class="container mt-5">
         <a href="{{ url('login') }}" class="btn btn-warning mb-3">Masuk</a>
         <div id="chart_div" style="width: 900px; height: 500px;"></div>
