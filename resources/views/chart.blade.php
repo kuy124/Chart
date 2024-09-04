@@ -32,11 +32,17 @@
                         title: 'Kelahiran dan Kematian di Jakarta Timur tahun 2020 perbulan',
                         legend: {
                             position: 'right'
-                        }
+                        },
+                        width: '100%',
+                        height: '100%'
                     };
 
                     const chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
                     chart.draw(data, options);
+
+                    window.addEventListener('resize', function() {
+                        chart.draw(data, options);
+                    });
                 });
         }
 
@@ -145,7 +151,7 @@
             @csrf
             <button type="submit" class="btn btn-warning mb-3">Keluar</button>
         </form>
-        <div id="curve_chart" style="width: 900px; height: 500px"></div>
+        <div id="curve_chart" style="width: 100%; height: 500px"></div>
 
         <div class="text-center mt-1">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataModal">

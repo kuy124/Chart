@@ -35,11 +35,16 @@
                         vAxis: { title: 'Jumlah' },
                         legend: { position: 'right' },
                         isStacked: false,
-                        colors: ['#1b9e77', '#d95f02']
+                        colors: ['#1b9e77', '#d95f02'],
+                        chartArea: { width: '100%', height: '70%' }
                     };
 
                     const chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
                     chart.draw(data, options);
+
+                    window.addEventListener('resize', function() {
+                        chart.draw(data, options);
+                    });
                 });
         }
 
@@ -103,7 +108,7 @@
     <p align="center"><a href="{{ url('/') }}"><button class="btn-success btn mt-2">Chart pertama</button></a></p>
     <div class="container mt-5">
         <a href="{{ url('login') }}" class="btn btn-warning mb-3">Masuk</a>
-        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+        <div id="chart_div" style="width: 100%; height: 500px;"></div>
 
         <div class="table-responsive mt-4">
             <table class="table table-bordered">

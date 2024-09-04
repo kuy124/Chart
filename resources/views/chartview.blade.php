@@ -32,11 +32,17 @@
                         title: 'Kelahiran dan Kematian di Jakarta Timur tahun 2020 perbulan',
                         legend: {
                             position: 'right'
-                        }
+                        },
+                        width: '100%',
+                        height: '100%'
                     };
 
                     const chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
                     chart.draw(data, options);
+
+                    window.addEventListener('resize', function() {
+                        chart.draw(data, options);
+                    });
                 });
         }
 
@@ -106,7 +112,7 @@
     <p align="center"><a href="{{ url('/2') }}"><button class="btn-success btn mt-2">Chart kedua</button></a></p>
     <div class="container mt-5">
         <a href="{{ url('login') }}" class="btn btn-warning mb-3">Masuk</a> 
-        <div id="curve_chart" style="width: 900px; height: 500px"></div>
+        <div id="curve_chart" style="width: 100%; height: 500px"></div>
 
         <div class="table-responsive mt-4">
             <table class="table table-bordered">

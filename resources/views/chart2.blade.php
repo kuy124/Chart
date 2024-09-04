@@ -35,11 +35,16 @@
                         vAxis: { title: 'Jumlah' },
                         legend: { position: 'right' },
                         isStacked: false,
-                        colors: ['#1b9e77', '#d95f02']
+                        colors: ['#1b9e77', '#d95f02'],
+                        chartArea: { width: '100%', height: '70%' }
                     };
 
                     const chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
                     chart.draw(data, options);
+
+                    window.addEventListener('resize', function() {
+                        chart.draw(data, options);
+                    });
                 });
         }
 
@@ -140,7 +145,7 @@
             @csrf
             <button type="submit" class="btn btn-warning mb-3">Keluar</button>
         </form>
-        <div id="chart_div" style="width: 900px; height: 500px;"></div>
+        <div id="chart_div" style="width: 100%; height: 500px;"></div>
 
         <div class="text-center mt-1">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataModal">
