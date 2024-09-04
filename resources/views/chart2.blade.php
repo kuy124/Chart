@@ -136,6 +136,13 @@
             });
         });
     </script>
+    <style>
+        p {
+            font-size: 10px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -146,6 +153,7 @@
             <button type="submit" class="btn btn-warning mb-3">Keluar</button>
         </form>
         <div id="chart_div" style="width: 100%; height: 500px;"></div>
+        <p align="center">Sumber/Source: Dinas Tenaga Kerja dan Transmigrasi Provinsi DKI Jakarta/Manpower and Transmigration Office of DKI Jakarta Province</p>
 
         <div class="text-center mt-1">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataModal">

@@ -142,6 +142,13 @@
             });
         });
     </script>
+    <style>
+        p {
+            font-size: 10px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -152,6 +159,7 @@
             <button type="submit" class="btn btn-warning mb-3">Keluar</button>
         </form>
         <div id="curve_chart" style="width: 100%; height: 500px"></div>
+        <p align="center">Sumber/Source: Dinas Kependudukan dan Catatan Sipil Provinsi DKI Jakarta/Civil Registration Service of DKI Jakarta Province</p>
 
         <div class="text-center mt-1">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataModal">

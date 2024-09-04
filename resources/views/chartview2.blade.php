@@ -102,6 +102,13 @@
             });
         });
     </script>
+    <style>
+        p {
+            font-size: 10px;
+            padding-top: 5px;
+            padding-bottom: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -109,6 +116,7 @@
     <div class="container mt-5">
         <a href="{{ url('login') }}" class="btn btn-warning mb-3">Masuk</a>
         <div id="chart_div" style="width: 100%; height: 500px;"></div>
+        <p align="center">Sumber/Source: Dinas Tenaga Kerja dan Transmigrasi Provinsi DKI Jakarta/Manpower and Transmigration Office of DKI Jakarta Province</p>
 
         <div class="table-responsive mt-4">
             <table class="table table-bordered">

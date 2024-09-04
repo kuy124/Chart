@@ -21,6 +21,7 @@ Route::middleware([CheckIsAdmin::class])->group(function () {
     Route::post('/add-jabatan-data', [JabatanDataController::class, 'addData']);
     Route::post('/update-jabatan-data', [JabatanDataController::class, 'updateData']);
     Route::post('/delete-jabatan-data', [JabatanDataController::class, 'deleteData']);
+    
     Route::get('/chart-data', [ChartController::class, 'getData']);
     Route::post('/add-chart-data', [ChartController::class, 'addData']);
     Route::post('/update-chart-data', [ChartController::class, 'updateData']);
@@ -34,6 +35,7 @@ Route::get('/jabatan-data', [JabatanDataController::class, 'index']);
 Route::post('/add-jabatan-data', [JabatanDataController::class, 'addData']);
 Route::post('/update-jabatan-data', [JabatanDataController::class, 'updateData']);
 Route::post('/delete-jabatan-data', [JabatanDataController::class, 'deleteData']);
+
 Route::get('/chart-data', [ChartController::class, 'getData']);
 Route::post('/add-chart-data', [ChartController::class, 'addData']);
 Route::post('/update-chart-data', [ChartController::class, 'updateData']);
