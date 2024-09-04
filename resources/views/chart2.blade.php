@@ -33,10 +33,10 @@
                         title: 'Jumlah Pencari Kerja yang Belum Ditempatkan Menurut Golongan Jabatan dan Jenis Kelamin di Kota Jakarta Timur, 2020',
                         hAxis: { title: 'Jabatan' },
                         vAxis: { title: 'Jumlah' },
-                        legend: { position: 'right' },
+                        legend: { position: 'top' },
                         isStacked: false,
                         colors: ['#1b9e77', '#d95f02'],
-                        chartArea: { width: '100%', height: '70%' }
+                        chartArea: { width: '80%', height: '70%' }
                     };
 
                     const chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));

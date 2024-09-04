@@ -31,7 +31,7 @@
                     const options = {
                         title: 'Kelahiran dan Kematian di Jakarta Timur tahun 2020 perbulan',
                         legend: {
-                            position: 'right'
+                            position: 'top'
                         },
                         width: '100%',
                         height: '100%'
