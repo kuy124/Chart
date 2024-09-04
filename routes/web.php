@@ -39,7 +39,6 @@ Route::post('/add-chart-data', [ChartController::class, 'addData']);
 Route::post('/update-chart-data', [ChartController::class, 'updateData']);
 Route::post('/delete-chart-data', [ChartController::class, 'deleteData']);
 
-
 Route::get('/2', function () {
     return view('chartview2');
 });
