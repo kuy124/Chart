@@ -8,11 +8,10 @@
     <title>Chart Kelahiran dan Kematian di Jakarta Timur tahun 2020</title>
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/404/404621.png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-        google.charts.load('current', {
-            'packages': ['corechart']
-        });
+        google.charts.load('current', { 'packages': ['corechart'] });
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart() {
@@ -30,17 +29,18 @@
 
                     const options = {
                         title: 'Kelahiran dan Kematian di Jakarta Timur tahun 2020 perbulan',
-                        legend: {
-                            position: 'top'
-                        },
+                        legend: { position: 'top' },
                         width: '100%',
-                        height: '100%'
+                        height: '100%',
+                        chartArea: { width: '85%', height: '70%' },
+                        colors: ['#007bff', '#dc3545'],
+                        backgroundColor: '#f8f9fa'
                     };
 
                     const chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
                     chart.draw(data, options);
 
-                    window.addEventListener('resize', function() {
+                    window.addEventListener('resize', function () {
                         chart.draw(data, options);
                     });
                 });
@@ -84,15 +84,13 @@
 
         function deleteRow(id) {
             fetch('/delete-chart-data', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                    },
-                    body: JSON.stringify({
-                        id
-                    })
-                })
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({ id })
+            })
                 .then(response => response.json())
                 .then(data => {
                     console.log(data);
@@ -102,35 +100,29 @@
                 .catch(error => console.error('Error:', error));
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             fetchTableData();
 
-            $('#addDataModal').on('hidden.bs.modal', function() {
+            $('#addDataModal').on('hidden.bs.modal', function () {
                 location.reload();
             });
 
-            document.getElementById('saveData').addEventListener('click', function() {
+            document.getElementById('saveData').addEventListener('click', function () {
                 const id = this.dataset.id || '';
                 const year = document.getElementById('year').value;
                 const sales = document.getElementById('sales').value;
                 const expenses = document.getElementById('expenses').value;
 
                 if (year && sales && expenses) {
-                    const url = id ? '/update-chart-data' :
-                        '/add-chart-data';
+                    const url = id ? '/update-chart-data' : '/add-chart-data';
                     fetch(url, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                            },
-                            body: JSON.stringify({
-                                id,
-                                year,
-                                sales,
-                                expenses
-                            })
-                        })
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                        },
+                        body: JSON.stringify({ id, year, sales, expenses })
+                    })
                         .then(response => response.json())
                         .then(data => {
                             console.log(data);
@@ -143,17 +135,65 @@
         });
     </script>
     <style>
-        p {
-            font-size: 10px;
-            padding-top: 5px;
-            padding-bottom: 10px;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        #curve_chart {
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .table {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        thead {
+            background-color: #007bff;
+            color: #fff;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .btn-primary, .btn-warning, .btn-danger {
+            border-radius: 20px;
+            padding: 5px 15px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-warning:hover {
+            background-color: #e0a800;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+        .modal-header, .modal-footer {
+            background-color: #f8f9fa;
+        }
+        .modal-content {
+            border-radius: 8px;
+        }
+        .modal-header h5 {
+            color: #007bff;
         }
     </style>
 </head>
 
 <body>
     <p align="center"><a href="{{ url('/admin2') }}"><button class="btn-success btn mt-2">Chart kedua</button></a></p>
-    <div class="container mt-5">
+    <div class="container">
         <form action="{{ url('logout') }}" method="post">
             @csrf
             <button type="submit" class="btn btn-warning mb-3">Keluar</button>
@@ -196,32 +236,31 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="dataForm">
+                    <form id="chartDataForm">
                         <div class="form-group">
                             <label for="year">Bulan</label>
-                            <input type="text" class="form-control" id="year" placeholder="Masukkan Bulan">
+                            <input type="text" class="form-control" id="year" required>
                         </div>
                         <div class="form-group">
                             <label for="sales">Kelahiran</label>
-                            <input type="number" class="form-control" id="sales" placeholder="Masukkan Kelahiran">
+                            <input type="number" class="form-control" id="sales" required>
                         </div>
                         <div class="form-group">
                             <label for="expenses">Kematian</label>
-                            <input type="number" class="form-control" id="expenses" placeholder="Masukkan Kematian">
+                            <input type="number" class="form-control" id="expenses" required>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        id="closeModals">Tutup</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                     <button type="button" class="btn btn-primary" id="saveData">Simpan</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 

@@ -10,7 +10,7 @@
     <style>
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #00b3a4, #003d75);
+            background: linear-gradient(135deg, #dedede, #dff0ff);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,7 +20,7 @@
         }
 
         .login-container {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(0, 139, 214, 0.686);
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

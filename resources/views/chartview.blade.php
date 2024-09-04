@@ -107,10 +107,58 @@
         });
     </script>
     <style>
-        p {
-            font-size: 10px;
-            padding-top: 5px;
-            padding-bottom: 10px;
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        #curve_chart {
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .table {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            text-align: center;
+            vertical-align: middle;
+        }
+        thead {
+            background-color: #007bff;
+            color: #fff;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .btn-primary, .btn-warning, .btn-danger {
+            border-radius: 20px;
+            padding: 5px 15px;
+            transition: background-color 0.3s ease-in-out;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-warning:hover {
+            background-color: #e0a800;
+        }
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+        .modal-header, .modal-footer {
+            background-color: #f8f9fa;
+        }
+        .modal-content {
+            border-radius: 8px;
+        }
+        .modal-header h5 {
+            color: #007bff;
         }
     </style>
 </head>
