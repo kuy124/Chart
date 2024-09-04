@@ -21,7 +21,6 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $user = Auth::user();
 
-            // Check the correct field name in the database
             if (!$user->is_admin) {
                 Auth::logout();
                 return Redirect::back()->withErrors(['error' => 'You do not have admin access.']);
