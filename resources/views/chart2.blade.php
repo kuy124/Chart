@@ -300,6 +300,13 @@
         </div>
     </div>
 
+    <footer class="bg-light text-center text-lg-start mt-4">
+        <div class="container p-4">
+            <p>&copy; 2024 Grafik Jumlah Pencari Kerja yang Belum Ditempatkan</p>
+            <p>Didukung oleh <a href="https://www.google.com/charts" target="_blank">Google Charts</a></p>
+        </div>
+    </footer>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
 
