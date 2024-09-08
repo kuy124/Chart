@@ -11,6 +11,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script type="text/javascript">
         google.charts.load('current', {
             'packages': ['corechart']
@@ -235,32 +236,40 @@
             @csrf
             <button type="submit" class="btn btn-warning mb-3">Keluar</button>
         </form>
-        <div id="chart_div" style="width: 100%; height: 500px;"></div>
+        <div id="chart_div" class="chart" style="width: 100%; height: 500px;"></div>
         <p align="center">Sumber/Source: Dinas Tenaga Kerja dan Transmigrasi Provinsi DKI Jakarta/Manpower and
             Transmigration Office of DKI Jakarta Province</p>
-
-        <div class="text-center mt-1">
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataModal">
-                Tambah Data
-            </button>
+        <div class="text-center mt-4">
+            <button class="btn btn-success" id="downloadChartBtn">Simpan statistik sebagai PDF</button>
         </div>
+        <div class="pdf">
+            <div class="table-responsive mt-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Jabatan</th>
+                            <th>Laki-Laki</th>
+                            <th>Perempuan</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dataTableBody">
 
-        <div class="table-responsive mt-4">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Jabatan</th>
-                        <th>Laki-Laki</th>
-                        <th>Perempuan</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody id="dataTableBody">
-
-                </tbody>
-            </table>
+                    </tbody>
+                </table>
+            </div>
         </div>
+    </div>
+
+    <div class="text-center mt-1">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataModal">
+            Tambah Data
+        </button>
+    </div>
+
+    <div class="text-center mt-4">
+        <button class="btn btn-success" id="downloadTableBtn">Simpan tabel sebagai PDF</button>
     </div>
 
     <div class="modal fade" id="addDataModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle"
@@ -307,7 +316,51 @@
         </div>
     </footer>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('downloadChartBtn').addEventListener('click', function() {
+            var element = document.querySelector('.chart');
+            html2pdf().from(element).set({
+                margin: 0.2,
+                filename: 'Chart_Pencari_Kerja_yang_Belum_Ditempatkan.pdf',
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
+                },
+                html2canvas: {
+                    scale: 2,
+                    width: 1100
+                },
+                jsPDF: {
+                    orientation: 'landscape',
+                    unit: 'in',
+                    format: 'letter',
+                    compressPDF: true
+                }
+            }).save();
+        });
+
+        document.getElementById('downloadTableBtn').addEventListener('click', function() {
+            var element = document.querySelector('.pdf');
+            html2pdf().from(element).set({
+                margin: 0.2,
+                filename: 'Tabel_Pencari_Kerja_yang_Belum_Ditempatkan.pdf',
+                image: {
+                    type: 'jpeg',
+                    quality: 0.98
+                },
+                html2canvas: {
+                    scale: 2,
+                },
+                jsPDF: {
+                    orientation: 'portrait',
+                    unit: 'in',
+                    format: 'letter',
+                    compressPDF: true
+                }
+            }).save();
+        }); 
+    </script>
+    <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js" >
 </body>
 
 </html>
