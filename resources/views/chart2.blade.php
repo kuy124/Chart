@@ -33,7 +33,7 @@
                     const data = google.visualization.arrayToDataTable(dataArray);
 
                     var options = {
-                        title: 'Jumlah Pencari Kerja yang Belum Ditempatkan Menurut Golongan Jabatan dan Jenis Kelamin di Kota Jakarta Timur, 2020',
+                        title: 'Jumlah Pencari Kerja Belum Ditempatkan Berdasarkan Golongan Jabatan dan Jenis Kelamin di Jakarta Timur, 2020',
                         vAxis: {
                             title: 'Jumlah'
                         },
