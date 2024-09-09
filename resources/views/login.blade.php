@@ -149,26 +149,26 @@
         @if ($errors->any())
             <div class="error-message">
                 @foreach ($errors->all() as $error)
-                    <p>Email atau kata sandi yang Anda masukkan tidak sesuai. Mohon periksa kembali dan coba lagi.</p>
+                    <p>{{ $error }}</p>
                 @endforeach
             </div>
         @endif
-        <form method="POST" action="{{ url('login') }}">
+        <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" aria-required="true" required>
             </div>
             <div class="form-group">
                 <label for="password">Sandi</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" aria-required="true" required>
             </div>
             <div class="form-group">
-                <button type="submit" class="button">Masuk</button>
+                <button type="submit">Masuk</button>
             </div>
         </form>
-        <a href="{{ url('') }}" style="text-decoration: none;">
-            <button class="back">Kembali</button>
+        <a href="{{ url('/') }}" style="text-decoration: none;">
+            <button class="back">Kembali ke Beranda</button>
         </a>
     </div>
 </body>
