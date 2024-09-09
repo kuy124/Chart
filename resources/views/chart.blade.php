@@ -190,7 +190,8 @@
 
         .btn-primary,
         .btn-warning,
-        .btn-danger {
+        .btn-danger,
+        .btn-secondary {
             border-radius: 20px;
             padding: 5px 15px;
             transition: background-color 0.3s ease-in-out;
