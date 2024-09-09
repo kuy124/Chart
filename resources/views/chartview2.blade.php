@@ -49,8 +49,8 @@
                         chartArea: {
                             width: '80%',
                             height: '70%',
-                            left: 80, 
-                            bottom: 100 
+                            left: 80,
+                            bottom: 100
                         }
                     };
 

@@ -49,8 +49,8 @@
                         chartArea: {
                             width: '80%',
                             height: '70%',
-                            left: 80, 
-                            bottom: 100 
+                            left: 80,
+                            bottom: 100
                         }
                     };
 
@@ -366,7 +366,5 @@
         });
     </script>
     <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js">
-        < /body>
-
-        <
+        < /body> <
         /html>
