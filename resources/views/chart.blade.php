@@ -229,7 +229,11 @@
         <form action="{{ url('logout') }}" method="post">
             @csrf
             <button type="submit" class="btn btn-warning mb-3">Keluar</button>
+            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#addDataModal">
+                Tambah Data
+            </button>
         </form>
+
         <div id="curve_chart" class="chart" style="width: 100%; height: 500px"></div>
         <p align="center">Sumber/Source: Dinas Kependudukan dan Catatan Sipil Provinsi DKI Jakarta/Civil
             Registration
@@ -255,12 +259,6 @@
                 </table>
             </div>
         </div>
-    </div>
-
-    <div class="text-center mt-1">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataModal">
-            Tambah Data
-        </button>
     </div>
 
     <div class="text-center mt-4">

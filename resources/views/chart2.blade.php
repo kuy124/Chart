@@ -11,6 +11,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script type="text/javascript">
         google.charts.load('current', {
@@ -240,6 +241,9 @@
         <form action="{{ url('logout') }}" method="post">
             @csrf
             <button type="submit" class="btn btn-warning mb-3">Keluar</button>
+            <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#addDataModal">
+                Tambah Data
+            </button>
         </form>
         <div id="chart_div" class="chart" style="width: 100%; height: 500px;"></div>
         <p align="center">Sumber/Source: Dinas Tenaga Kerja dan Transmigrasi Provinsi DKI Jakarta/Manpower and
@@ -265,12 +269,6 @@
                 </table>
             </div>
         </div>
-    </div>
-
-    <div class="text-center mt-1">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addDataModal">
-            Tambah Data
-        </button>
     </div>
 
     <div class="text-center mt-4">
@@ -306,13 +304,13 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                        id="closeModals">Tutup</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
                     <button type="button" class="btn btn-primary" id="saveData">Simpan</button>
                 </div>
             </div>
         </div>
     </div>
+
 
     <footer class="bg-light text-center text-lg-start mt-4">
         <div class="container p-4">
@@ -365,6 +363,6 @@
             }).save();
         });
     </script>
-    <script src = "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js">
-        < /body> <
-        /html>
+</body>
+
+</html>
