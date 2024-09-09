@@ -22,35 +22,39 @@
             fetch('/jabatan-data')
                 .then(response => response.json())
                 .then(responseData => {
-                    const data = new google.visualization.DataTable();
-                    data.addColumn('string', 'Jabatan');
-                    data.addColumn('number', 'Laki-Laki');
-                    data.addColumn('number', 'Perempuan');
+                    const dataArray = [
+                        ['Jabatan', 'Laki-Laki', 'Perempuan']
+                    ];
 
                     responseData.forEach(row => {
-                        data.addRow([row.jabatan, row.laki_laki, row.perempuan]);
+                        dataArray.push([row.jabatan, row.laki_laki, row.perempuan]);
                     });
 
-                    const options = {
+                    const data = google.visualization.arrayToDataTable(dataArray);
+
+                    var options = {
                         title: 'Jumlah Pencari Kerja yang Belum Ditempatkan Menurut Golongan Jabatan dan Jenis Kelamin di Kota Jakarta Timur, 2020',
-                        hAxis: {
-                            title: 'Jabatan'
-                        },
                         vAxis: {
                             title: 'Jumlah'
                         },
-                        legend: {
-                            position: 'top'
+                        hAxis: {
+                            title: 'Jabatan',
+                            textStyle: {
+                                fontSize: 12
+                            }
                         },
-                        isStacked: false,
+                        isStacked: true,
+                        legend: 'top',
                         colors: ['#1b9e77', '#d95f02'],
                         chartArea: {
                             width: '80%',
-                            height: '70%'
+                            height: '70%',
+                            left: 80, 
+                            bottom: 100 
                         }
                     };
 
-                    const chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+                    var chart = new google.visualization.SteppedAreaChart(document.getElementById('chart_div'));
                     chart.draw(data, options);
 
                     window.addEventListener('resize', function() {
