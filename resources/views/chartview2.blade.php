@@ -264,7 +264,7 @@
             var element = document.querySelector('.pdf');
             html2pdf().from(element).set({
                 margin: 0.2,
-                filename: 'Tabel_Pencari_Kerja_yang_Belum_Ditempatkan.pdf',
+                filename: 'Tabel_Pencari_Kerja_Belum_Ditempatkan.pdf',
                 image: {
                     type: 'jpeg',
                     quality: 0.98

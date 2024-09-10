@@ -344,10 +344,17 @@
         });
 
         document.getElementById('downloadTableBtn').addEventListener('click', function() {
-            var element = document.querySelector('.pdf');
-            html2pdf().from(element).set({
+            var originalTable = document.querySelector('.pdf');
+            var clonedTable = originalTable.cloneNode(true);
+
+            var rows = clonedTable.querySelectorAll('tr');
+            rows.forEach(function(row) {
+                row.removeChild(row.lastElementChild);
+            });
+
+            html2pdf().from(clonedTable).set({
                 margin: 0.2,
-                filename: 'Tabel_Pencari_Kerja_yang_Belum_Ditempatkan.pdf',
+                filename: 'Tabel_Pencari_Kerja_Belum_Ditempatkan.pdf',
                 image: {
                     type: 'jpeg',
                     quality: 0.98
