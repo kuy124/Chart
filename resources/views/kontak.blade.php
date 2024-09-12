@@ -75,18 +75,11 @@
         }
 
         footer {
-            background-color: #007bff;
-            color: white;
             padding: 30px 0;
         }
 
         footer a {
-            color: white;
             text-decoration: underline;
-        }
-
-        footer a:hover {
-            color: #d1ecf1;
         }
 
         .btn-success {
