@@ -7,22 +7,46 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
         .contact-header {
-            background-color: #f8f9fa;
+            background-color: #007bff;
             padding: 50px 0;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .contact-header h1 {
-            color: #007bff;
+            font-size: 2.5rem;
         }
 
         .contact-info {
-            margin-bottom: 30px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        .contact-info i {
+            font-size: 3rem;
+            transition: transform 0.3s ease;
+        }
+
+        .contact-info i:hover {
+            transform: scale(1.1);
+            color: #0056b3;
+        }
+
+        .contact-info h4 {
+            margin-top: 15px;
+            font-weight: bold;
         }
 
         .form-section {
             background-color: #f8f9fa;
             padding: 50px 0;
+            box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.1);
         }
 
         .form-control, .btn {
@@ -39,7 +63,48 @@
         }
 
         .map-container {
-            margin-top: 30px;
+            margin-top: 50px;
+        }
+
+        .mapouter {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .mapouter iframe {
+            border-radius: 10px;
+        }
+
+        footer {
+            background-color: #007bff;
+            color: white;
+            padding: 30px 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: underline;
+        }
+
+        footer a:hover {
+            color: #d1ecf1;
+        }
+
+        .btn-success {
+            border-radius: 20px;
+            padding: 5px 15px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-success:hover {
+            background-color: #28a745;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -48,23 +113,24 @@
 <header class="contact-header text-center">
     <div class="container">
         <h1>Kontak Kami</h1>
+        <p>Kami siap membantu Anda. Hubungi kami melalui salah satu saluran di bawah ini.</p>
     </div>
 </header>
 
 <section class="container my-5">
-    <div class="row contact-info">
-        <div class="col-md-4 text-center">
-            <i class="bi bi-telephone-fill" style="font-size: 3rem; color: #007bff;"></i>
+    <div class="row contact-info text-center">
+        <div class="col-md-4">
+            <i class="bi bi-telephone-fill" aria-hidden="true" title="Telepon Kami"></i>
             <h4>Telepon</h4>
             <p>0812-3456-7890</p>
         </div>
-        <div class="col-md-4 text-center">
-            <i class="bi bi-envelope-fill" style="font-size: 3rem; color: #007bff;"></i>
+        <div class="col-md-4">
+            <i class="bi bi-envelope-fill" aria-hidden="true" title="Kirim Email"></i>
             <h4>Email</h4>
             <p>jakarta@email.com</p>
         </div>
-        <div class="col-md-4 text-center">
-            <i class="bi bi-geo-alt-fill" style="font-size: 3rem; color: #007bff;"></i>
+        <div class="col-md-4">
+            <i class="bi bi-geo-alt-fill" aria-hidden="true" title="Kunjungi Lokasi"></i>
             <h4>Alamat</h4>
             <p>Blok Sadar 2, Jalan Doktor Sumarno Blok Sadar 2 No.1, Penggilingan, Cakung</p>
         </div>
@@ -84,12 +150,12 @@
     </div>
 </section>
 
-<div class="text-center mt-4">
+<div class="text-center mt-4 mb-4">
     <button class="btn btn-success" onclick="window.history.back()">Kembali</button>
 </div>
 
-<footer class="bg-light text-center text-lg-start mt-4">
-    <div class="container p-4">
+<footer class="text-center">
+    <div class="container">
         <p>&copy; 2024 Jakarta Timur</p>
         <p>Didukung oleh <a href="https://developers.google.com/chart" target="_blank">Google Charts</a></p>
     </div>
@@ -97,5 +163,15 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
 </body>
 </html>
