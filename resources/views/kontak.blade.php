@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kontak Kami</title>
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/404/404621.png">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -120,7 +121,7 @@
         <div class="col-md-4">
             <i class="bi bi-envelope-fill" aria-hidden="true" title="Kirim Email"></i>
             <h4>Email</h4>
-            <p><a href="mailto:kun.faris.7d@gmail.com">kun.faris.7d@gmail.com</a></p>
+            <p><a href="mailto:EXAMPLE@gmail.com">EXAMPLE@gmail.com</a></p>
         </div>
         <div class="col-md-4">
             <i class="bi bi-geo-alt-fill" aria-hidden="true" title="Kunjungi Lokasi"></i>
