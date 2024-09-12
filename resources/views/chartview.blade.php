@@ -215,14 +215,13 @@
         </div>
     </div>
 
-
     <div class="text-center mt-4">
         <button class="btn btn-success" id="downloadTableBtn">Simpan tabel sebagai PDF</button>
     </div>
 
     <footer class="bg-light text-center text-lg-start mt-4">
         <div class="container p-4">
-            <p>&copy; 2024 Grafik Kelahiran dan Kematian di Jakarta Timur</p>
+            <p>&copy; 2024 Jakarta Timur</p>
             <p>Didukung oleh <a href="https://developers.google.com/chart" target="_blank">Google Charts</a></p>
         </div>
     </footer>

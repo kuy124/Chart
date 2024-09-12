@@ -317,10 +317,9 @@
         </div>
     </div>
 
-
     <footer class="bg-light text-center text-lg-start mt-4">
         <div class="container p-4">
-            <p>&copy; 2024 Grafik Jumlah Pencari Kerja yang Belum Ditempatkan</p>
+            <p>&copy; 2024 Jakarta Timur</p>
             <p>Didukung oleh <a href="https://developers.google.com/chart" target="_blank">Google Charts</a></p>
         </div>
     </footer>
