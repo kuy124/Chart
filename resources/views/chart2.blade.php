@@ -203,7 +203,8 @@
         .btn-primary,
         .btn-warning,
         .btn-danger,
-        .btn-secondary {
+        .btn-secondary,
+        .btn-success {
             border-radius: 20px;
             padding: 5px 15px;
             transition: background-color 0.3s ease-in-out;
@@ -245,6 +246,11 @@
             <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#addDataModal">
                 Tambah Data
             </button>
+            <a href="{{ url('kontak') }}">
+                <button type="button" class="btn btn-success mb-3">
+                    Kontak
+                </button>
+            </a>
         </form>
         <div id="chart_div" class="chart" style="width: 100%; height: 500px;"></div>
         <p align="center">Sumber/Source: Dinas Tenaga Kerja dan Transmigrasi Provinsi DKI Jakarta/Manpower and

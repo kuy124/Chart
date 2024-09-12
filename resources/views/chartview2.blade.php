@@ -164,7 +164,8 @@
 
         .btn-primary,
         .btn-warning,
-        .btn-danger {
+        .btn-danger,
+        .btn-success {
             border-radius: 20px;
             padding: 5px 15px;
             transition: background-color 0.3s ease-in-out;
@@ -201,6 +202,11 @@
     <p align="center"><a href="{{ url('/') }}"><button class="btn-success btn mt-2">Chart pertama</button></a></p>
     <div class="container mt-5">
         <a href="{{ url('login') }}" class="btn btn-warning mb-3">Masuk</a>
+        <a href="{{ url('kontak') }}">
+            <button type="button" class="btn btn-success mb-3">
+                Kontak
+            </button>
+        </a>
         <div id="chart_div" class="chart" style="width: 100%; height: 500px;"></div>
         <p align="center">Sumber/Source: Dinas Tenaga Kerja dan Transmigrasi Provinsi DKI Jakarta/Manpower and
             Transmigration Office of DKI Jakarta Province</p>

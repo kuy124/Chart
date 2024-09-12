@@ -27,6 +27,10 @@ Route::middleware([CheckIsAdmin::class])->group(function () {
     Route::post('/update-chart-data', [ChartController::class, 'updateData']);
     Route::post('/delete-chart-data', [ChartController::class, 'deleteData']);
 });
+
+Route::get('/kontak', function () {
+    return view('kontak');
+});  
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::post('logout', [LoginController::class, 'logout'])->name('logout');
