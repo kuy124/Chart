@@ -127,7 +127,7 @@
         <div class="col-md-4">
             <i class="bi bi-envelope-fill" aria-hidden="true" title="Kirim Email"></i>
             <h4>Email</h4>
-            <p>jakarta@email.com</p>
+            <p>JakartaTimur@email.com</p>
         </div>
         <div class="col-md-4">
             <i class="bi bi-geo-alt-fill" aria-hidden="true" title="Kunjungi Lokasi"></i>
