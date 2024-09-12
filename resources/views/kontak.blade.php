@@ -81,10 +81,6 @@
         footer a {
             text-decoration: underline;
         }
-        
-        footer{
-            background-color: #f8f9fa;
-        }
 
         .btn-success {
             border-radius: 20px;
