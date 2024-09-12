@@ -120,7 +120,7 @@
         <div class="col-md-4">
             <i class="bi bi-envelope-fill" aria-hidden="true" title="Kirim Email"></i>
             <h4>Email</h4>
-            <p>JakartaTimur@email.com</p>
+            <p><a href="mailto:kun.faris.7d@gmail.com">kun.faris.7d@gmail.com</a></p>
         </div>
         <div class="col-md-4">
             <i class="bi bi-geo-alt-fill" aria-hidden="true" title="Kunjungi Lokasi"></i>
