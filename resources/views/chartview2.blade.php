@@ -164,8 +164,7 @@
 
         .btn-primary,
         .btn-warning,
-        .btn-danger,
-        .btn-success {
+        .btn-danger{
             border-radius: 20px;
             padding: 5px 15px;
             transition: background-color 0.3s ease-in-out;
@@ -203,7 +202,7 @@
     <div class="container mt-5">
         <a href="{{ url('login') }}" class="btn btn-warning mb-3">Masuk</a>
         <a href="{{ url('kontak') }}">
-            <button type="button" class="btn btn-success mb-3">
+            <button type="button" class="btn btn-danger mb-3">
                 Kontak
             </button>
         </a>

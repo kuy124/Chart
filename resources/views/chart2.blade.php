@@ -203,8 +203,7 @@
         .btn-primary,
         .btn-warning,
         .btn-danger,
-        .btn-secondary,
-        .btn-success {
+        .btn-secondary {
             border-radius: 20px;
             padding: 5px 15px;
             transition: background-color 0.3s ease-in-out;
@@ -247,7 +246,7 @@
                 Tambah Data
             </button>
             <a href="{{ url('kontak') }}">
-                <button type="button" class="btn btn-success mb-3">
+                <button type="button" class="btn btn-danger mb-3">
                     Kontak
                 </button>
             </a>
